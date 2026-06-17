@@ -3,7 +3,7 @@ name: Compile and Host CLI
 on:
   push:
     tags:
-      - 'v*' # Jab bhi tag v0.1.0 push karoge, hosting active ho jayegi
+      - 'v*'
 
 jobs:
   release:
@@ -17,7 +17,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Build Release Binary with Secrets Injection
-        # Yahan hum GitHub Secrets ko compile karte waqt environment variable banakar pass kar rahe hain
         env:
           HF_ACCESS_TOKEN: ${{ secrets.HF_ACCESS_TOKEN }}
           HF_SPACE_URL: ${{ secrets.HF_SPACE_URL }}
@@ -26,7 +25,7 @@ jobs:
       - name: Upload Binary to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          files: target/release/ghost_optimizer
+          files: target/release/zynth
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
