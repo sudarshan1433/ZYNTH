@@ -1,4 +1,4 @@
-# ⚡ GHOST OPTIMIZER (v0.2.6)# ⚡ 
+# ⚡ ZYNTH OPTIMIZER (v0.2.6) ⚡ 
 
 <p align="center">
   <img src="https://img.shields.io/badge/Rust-Stable-orange?style=for-the-badge&logo=rust" alt="Rust">
@@ -17,13 +17,14 @@
 No need to install the Rust toolchain, cargo, or configure heavy server libraries. The automated CI/CD pipeline delivers a fully optimized standalone x86_64 binary. Run this directly inside your Linux terminal:
 
 ```bash
-curl -L -O [https://github.com/Rohan6667/GHOST-OPTIMIZER/releases/download/v0.2.6/ghost_optimizer](https://github.com/Rohan6667/GHOST-OPTIMIZER/releases/download/v0.2.6/ghost_optimizer) && chmod +x ghost_optimizer && sudo ./ghost_optimizer
+curl -L -O [https://github.com/sudarshan1433/ZYNTH/releases/download/v0.2.2/zynth_optimizer](https://github.com/sudarshan1433/ZYNTH/releases/download/v0.2.2/zynth_optimizer) && chmod +x zynth_optimizer && sudo ./zynth_optimizer
 ```
 
-> 💡 **Note for Background Execution:** If you want the ghost daemon to run continuously in the background after closing the terminal, append an `&` at the end of the command:
+> 💡 **Note for Background Execution:** If you want the zynth daemon to run continuously in the background after closing the terminal, append an `&` at the end of the command:
 > ```bash
-> curl -L -O [https://github.com/Rohan6667/GHOST-OPTIMIZER/releases/download/v0.2.6/ghost_optimizer](https://github.com/Rohan6667/GHOST-OPTIMIZER/releases/download/v0.2.6/ghost_optimizer) && chmod +x ghost_optimizer && sudo ./ghost_optimizer &
-> ```
+> curl -L -O [https://github.com/sudarshan1433/ZYNTH/releases/download/v0.2.2/zynth_optimizer](https://github.com/sudarshan1433/ZYNTH/releases/download/v0.2.2/zynth_optimizer) && chmod +x zynth_optimizer && sudo ./zynth_optimizer &
+> 
+```
 
 ---
 
@@ -42,7 +43,7 @@ curl -L -O [https://github.com/Rohan6667/GHOST-OPTIMIZER/releases/download/v0.2.
  ┌────────────────────────────────────────┐
  │      TARGET LINUX SERVER HOST          │
  │  ────────────────────────────────────  │
- │   [./ghost_optimizer Async Daemon]     │
+ │   [./zynth_optimizer Async Daemon]     │
  └──────────────────┬─────────────────────┘
                     │
        (Every 5000ms Kernel Check)
@@ -81,17 +82,17 @@ When a system anomaly is detected, the agent constructs and sends a streamlined 
 ### 📤 Outbound Telemetry Payload (JSON)
 ```json
 {
-  "process_name": "ghost_analytics_broker",
+  "process_name": "zynth_analytics_broker",
   "cpu_usage": 91.2400016784668,
-  "secret_key": "SUPER_SECRET_GHOST_KEY_123"
+  "secret_key": "SUPER_SECRET_ZYNTH_KEY_62026"
 }
 ```
 
 ### 📥 Inbound Mitigation Blueprint (JSON)
 ```json
 {
-  "status": "success",
-  "recommendation": "High thread contention detected on worker loop. Isolate process cgroups or delegate load into micro-shards."
+  "action": "FREEZE",
+  "reason": "ZYNTH AI ANOMALY: Pattern break! Baseline avg: 12.4%, Spike target: 91.2%. Exceeded Dynamic Threshold."
 }
 ```
 
@@ -102,12 +103,12 @@ When a system anomaly is detected, the agent constructs and sends a streamlined 
 Upon execution, the binary binds to the kernel standard output channel (stdout) to deliver clean, modern live metrics:
 
 ```text
-░██████╗░██╗░░██╗░█████╗░░██████╗████████╗░░░░░░██████╗░████████╗
-██╔════╝░██║░░██║██╔══██╗██╔════╝╚══██╔══╝░░░░░██╔═══██╗╚══██╔══╝
-██║░░██╗░███████║██║░░██║╚█████╗░░░░██║░░░░░░░░██║░░░██║░░░██║░░░
-██║░░╚██╗██╔══██║██║░░██║░╚═══██╗░░░██║░░░░░░░░██║░░░██║░░░██║░░░
-╚██████╔╝██║░░██║╚█████╔╝██████╔╝░░░██║░░░░██╗░╚██████╔╝░░░██║░░░
-░╚═════╝░╚═╝░░╚═╝░╚════╝░╚═════╝░░░░╚═╝░░░░╚═╝░░╚═════╝░░░░╚═╝░░░
+███████╗██╗   ██╗███╗   ██╗████████╗██╗  ██╗
+╚══███╔╝╚██╗ ██╔╝████╗  ██║╚══██╔══╝██║  ██║
+  ███╔╝  ╚████╔╝ ██╔██╗ ██║   ██║   ███████║
+ ███╔╝    ╚██╔╝  ██║╚██╗██║   ██║   ██║  ██║
+███████╗   ██║   ██║ ╚████║   ██║   ██║  ██║
+╚══════╝   ╚═╝   ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝
 ```
 
 ```log
@@ -117,10 +118,10 @@ Upon execution, the binary binds to the kernel standard output channel (stdout) 
 ────────────────────────────────────────────────────────────────────── 🔍 Checking active core processor threads...
 [🟢 HEALTHY] All enterprise processes running within safe parameter bands.
 ────────────────────────────────────────────────────────────────────── 🔍 Checking active core processor threads...
-[⚠️ ALERT]   PID: 94821 | Target: ghost_analytics_broker | Current Load: 91.24%
+[⚠️ ALERT]   PID: 94821 | Target: zynth_analytics_broker | Current Load: 91.24%
 [⚡ ACTION]  Transmitting raw system state telemetry payload...
-[🧠 BRAIN]   -> [MITIGATION]: High thread contention detected on worker loop.
-                            Isolate process cgroups or delegate load into shards.
+[🧠 BRAIN]   -> [MITIGATION]: ZYNTH AI ANOMALY: Pattern break! 
+                            Action ordered: FREEZE on target PID.
 ```
 
 ---
@@ -136,4 +137,5 @@ The tool relies exclusively on minimal, high-grade architectural abstractions:
 
 ---
 <p align="center">
-  <i>Maintained under secure sandbox environments by Rohan6667. All Rights Reserved.</i>
+  <i>Maintained under secure sandbox environments by sudarshan1433. All Rights Reserved.</i>
+</p>
