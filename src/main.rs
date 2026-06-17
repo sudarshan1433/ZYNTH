@@ -65,14 +65,17 @@ fn thaw_all_processes() {
 #[tokio::main]
 async fn main() {
     println!("=========================================================");
-    println!("===    GHOST OPTIMIZER AUTONOMOUS REAL-TIME CLIENT     ===");
+    println!("===    ZYNTH OPTIMIZER AUTONOMOUS REAL-TIME CLIENT    ===");
     println!("=========================================================");
 
     let client = reqwest::Client::new();
     let mut sys = System::new_all();
     
-    let secret_key = env::var("GHOST_SECRET_KEY").unwrap_or_else(|_| "SUPER_SECRET_GHOST_KEY_62026".to_string());
-    let brain_url = env::var("HF_SPACE_URL").unwrap_or_else(|_| "https://sudarshan143-ghost.hf.space/analyze".to_string());
+    // Updated Secret Key for ZYNTH
+    let secret_key = env::var("ZYNTH_SECRET_KEY").unwrap_or_else(|_| "SUPER_SECRET_ZYNTH_KEY_62026".to_string());
+    
+    // Updated HF Space URL (Make sure your HF space is also renamed to match this if needed)
+    let brain_url = env::var("HF_SPACE_URL").unwrap_or_else(|_| "https://sudarshan143-zynth.hf.space/analyze".to_string());
 
     loop {
         // Modern sysinfo automatic refresh syntax
@@ -98,7 +101,8 @@ async fn main() {
             let cpu = process.cpu_usage();
             let p_name = process.name();
             
-            if p_name == "ghost_optimizer" || p_name == "python3" || p_name == "bash" {
+            // Updated process exclusion so ZYNTH doesn't freeze itself
+            if p_name == "zynth" || p_name == "zynth_optimizer" || p_name == "python3" || p_name == "bash" {
                 continue;
             }
 
@@ -141,4 +145,4 @@ async fn main() {
 
         tokio::time::sleep(Duration::from_secs(5)).await;
     }
-          }
+}
